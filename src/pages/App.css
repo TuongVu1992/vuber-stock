@@ -1,0 +1,26 @@
+.Body {
+    text-align: center;
+    margin: 0;
+   }
+   
+body{
+    margin: 0;
+    }
+   
+.Button{
+    height: 400;
+    min-Width: 800;
+    margin-Left: '20%';
+    position: 'absolute';
+    text-align: center;
+   }
+   
+.header{
+    background-color: rgb(127, 255, 223); 
+    text-align: center;   
+   }
+
+.waitWhat{
+    text-align: center;  
+    margin-right: 350px;
+}
