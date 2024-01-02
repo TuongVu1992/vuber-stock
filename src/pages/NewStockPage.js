@@ -15,6 +15,11 @@ import Stack from '@mui/material/Stack';
 import SideBarService from '../services/SideBarService';
 import InputSearchService from '../services/InputSearchService';
 import { useParams } from 'react-router-dom';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Typography from '@mui/material/Typography';
 
 //nested data is ok, see header
 const StockTable = ({ data }) => {
@@ -162,67 +167,96 @@ const SideBar = ({
             top: 0,
           }}
         >
-          <TextField
-            label="Politican Name"
-            sx={{
-              borderRadius: '10%',
-              backgroundColor: 'white',
-              marginTop: '100px',
-              width: '182px',
-              marginLeft: '10px',
-              marginRight: '10px',
-            }}
-            value={politicanValue}
-            onChange={handleChangePoliticanValue}
-            onKeyDown={handleKeyPressPolitican}
-          />
-
-          <TextField
-            label="Hedge Fund"
-            sx={{
-              borderRadius: '10%',
-              backgroundColor: 'white',
-              marginTop: '10px',
-              width: '182px',
-              marginLeft: '10px',
-              marginRight: '10px',
-            }}
-            value={hedgeFundValue}
-            onChange={handleChangeFundValue}
-            onKeyDown={handleKeyPressFund}
-          />
-
-          <TextField
-            label="Stock Symbol: i.e. AAPL"
-            sx={{
-              borderRadius: '10%',
-              backgroundColor: 'white',
-              marginTop: '10px',
-              width: '182px',
-              marginLeft: '10px',
-              marginRight: '10px',
-            }}
-            value={inputFieldValue}
-            onChange={handleChangeInputField}
-            onKeyDown={handleKeyPressInputField}
-          />
-        </div>
-
-        {/* this place holder for input field */}
-        <div style={{ marginLeft: '220px', padding: '20px' }}>
-          <OutlinedInput
-            id="outlined-adornment-amount"
-            startAdornment={
-              <InputAdornment position="start">
-                <Input
+          <div className="mt-40">
+            <Accordion
+              disableGutters={true}
+              sx={{ backgroundColor: '#333' }}
+              elevation={0}
+              defaultExpanded
+            >
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon style={{ color: 'white' }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography variant="body1" sx={{ color: 'white' }}>
+                  Politician Name
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <TextField
+                  label="Politican Name"
+                  variant="outlined"
+                  type="text"
+                  InputProps={{
+                    style: { background: 'white' },
+                  }}
+                  value={politicanValue}
+                  onChange={handleChangePoliticanValue}
+                  onKeyDown={handleKeyPressPolitican}
+                />
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              disableGutters={true}
+              sx={{ backgroundColor: '#333' }}
+              elevation={0}
+              defaultExpanded
+            >
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon style={{ color: 'white' }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                sx={{ color: 'white' }}
+              >
+                <Typography variant="body1" sx={{ color: 'white' }}>
+                  Hedge Manager Manager Name
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <TextField
+                  label="Hedge Manager Manager Name"
+                  variant="outlined"
+                  type="text"
+                  InputProps={{
+                    style: { background: 'white' },
+                  }}
+                  value={hedgeFundValue}
+                  onChange={handleChangeFundValue}
+                  onKeyDown={handleKeyPressFund}
+                />
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              disableGutters={true}
+              sx={{ backgroundColor: '#333' }}
+              elevation={0}
+              defaultExpanded
+            >
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon style={{ color: 'white' }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography variant="body1" sx={{ color: 'white' }}>
+                  Stock Symbol
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <TextField
+                  label="Stock Symbol: i.e. AAPL"
+                  variant="outlined"
+                  type="text"
+                  InputProps={{
+                    style: { background: 'white' },
+                  }}
+                  value={inputFieldValue}
                   onChange={handleChangeInputField}
                   onKeyDown={handleKeyPressInputField}
-                  placeholder="Stock Ticker Symbol"
                 />
-              </InputAdornment>
-            }
-            label="Amount"
-          />
+              </AccordionDetails>
+            </Accordion>
+          </div>
         </div>
       </div>
     </>
@@ -296,7 +330,6 @@ const hedgeFundandPoliticanPullData = async (
 
 const NewStockPage = () => {
   const [politicanStock, setPoliticanStock] = useState([]);
-  const [hedgeStock, setHedgeStock] = useState([]);
   const [individualStock, setIndividualStock] = useState([]);
   const { jwtToken } = useParams();
 
@@ -369,7 +402,6 @@ const NewStockPage = () => {
 
   // this is where you can the value of the input field
   const inputFieldPress = (data) => {
-    // setHedgeStock('');
     setPoliticanStock('');
     getInputSearch(data);
   };
@@ -387,8 +419,9 @@ const NewStockPage = () => {
         <Stack direction="column" spacing={2} style={{ marginLeft: '250px' }}>
           <Box
             sx={{
-              width: '2000px',
+              width: '1600px',
               position: 'flex',
+              paddingTop: '80px',
               paddingBottom: '100px',
             }}
           >
