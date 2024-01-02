@@ -20,6 +20,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Typography from '@mui/material/Typography';
+import InputBase from '@mui/material/InputBase';
 
 //nested data is ok, see header
 const StockTable = ({ data }) => {
@@ -170,7 +171,7 @@ const SideBar = ({
           <div className="mt-40">
             <Accordion
               disableGutters={true}
-              sx={{ backgroundColor: '#333' }}
+              sx={{ backgroundColor: '#333', border: 'none' }}
               elevation={0}
               defaultExpanded
             >
@@ -184,12 +185,17 @@ const SideBar = ({
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <TextField
-                  label="Politican Name"
+                <InputBase
+                  placeholder="Politician Name"
                   variant="outlined"
                   type="text"
-                  InputProps={{
-                    style: { background: 'white' },
+                  inputProps={{
+                    style: {
+                      background: 'white',
+                      height: '2em',
+                      borderRadius: '10px',
+                      paddingLeft: '20px',
+                    },
                   }}
                   value={politicanValue}
                   onChange={handleChangePoliticanValue}
@@ -199,7 +205,7 @@ const SideBar = ({
             </Accordion>
             <Accordion
               disableGutters={true}
-              sx={{ backgroundColor: '#333' }}
+              sx={{ backgroundColor: '#333', border: 'none' }}
               elevation={0}
               defaultExpanded
             >
@@ -210,16 +216,21 @@ const SideBar = ({
                 sx={{ color: 'white' }}
               >
                 <Typography variant="body1" sx={{ color: 'white' }}>
-                  Hedge Manager Manager Name
+                  Hedge Fund Manager Name
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <TextField
-                  label="Hedge Manager Manager Name"
+                <InputBase
+                  placeholder="Warren_Buffett"
                   variant="outlined"
                   type="text"
-                  InputProps={{
-                    style: { background: 'white' },
+                  inputProps={{
+                    style: {
+                      background: 'white',
+                      height: '2em',
+                      borderRadius: '10px',
+                      paddingLeft: '20px',
+                    },
                   }}
                   value={hedgeFundValue}
                   onChange={handleChangeFundValue}
@@ -229,7 +240,7 @@ const SideBar = ({
             </Accordion>
             <Accordion
               disableGutters={true}
-              sx={{ backgroundColor: '#333' }}
+              sx={{ backgroundColor: '#333', border: 'none' }}
               elevation={0}
               defaultExpanded
             >
@@ -243,12 +254,17 @@ const SideBar = ({
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <TextField
-                  label="Stock Symbol: i.e. AAPL"
+                <InputBase
+                  placeholder="AAPL"
                   variant="outlined"
                   type="text"
-                  InputProps={{
-                    style: { background: 'white' },
+                  inputProps={{
+                    style: {
+                      background: 'white',
+                      height: '2em',
+                      borderRadius: '10px',
+                      paddingLeft: '20px',
+                    },
                   }}
                   value={inputFieldValue}
                   onChange={handleChangeInputField}
