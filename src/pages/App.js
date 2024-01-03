@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/vuber-stock/" element={<HomePage />} />
         <Route path="/ForgotPassWordPage/" element={<ForgotPassWordPage />} />
         <Route path="/:jwtToken/NewStockPage/" element={<NewStockPage />} />
       </Routes>
