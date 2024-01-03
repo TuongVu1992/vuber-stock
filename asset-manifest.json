@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/vuber-stock/static/css/main.bbd47ad7.css",
-    "main.js": "/vuber-stock/static/js/main.9ab2b514.js",
+    "main.js": "/vuber-stock/static/js/main.ba6b7f4e.js",
     "index.html": "/vuber-stock/index.html",
     "main.bbd47ad7.css.map": "/vuber-stock/static/css/main.bbd47ad7.css.map",
-    "main.9ab2b514.js.map": "/vuber-stock/static/js/main.9ab2b514.js.map"
+    "main.ba6b7f4e.js.map": "/vuber-stock/static/js/main.ba6b7f4e.js.map"
   },
   "entrypoints": [
     "static/css/main.bbd47ad7.css",
-    "static/js/main.9ab2b514.js"
+    "static/js/main.ba6b7f4e.js"
   ]
 }
