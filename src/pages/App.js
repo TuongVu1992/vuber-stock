@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/test-tailwind-deploy/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/ForgotPassWordPage/" element={<ForgotPassWordPage />} />
         <Route path="/:jwtToken/NewStockPage/" element={<NewStockPage />} />
       </Routes>
