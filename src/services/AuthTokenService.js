@@ -1,7 +1,5 @@
 const AuthToken = async (userName) => {
-  const response = await fetch(
-    `http://www.fluxdux.com:443/getJWT/${userName}/`,
-  );
+  const response = await fetch(`https://www.fluxdux.com/getJWT/${userName}/`);
 
   if (!response.ok) {
     const message = `An error occurred: ${response.statusText}`;

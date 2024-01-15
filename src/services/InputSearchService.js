@@ -1,6 +1,6 @@
 const InputSearch = async (authToken, stockSymbol) => {
   const response = await fetch(
-    `http://www.fluxdux.com:443/getSingleStock/${authToken}/${stockSymbol}/`,
+    `https://www.fluxdux.com/getSingleStock/${authToken}/${stockSymbol}/`,
   );
 
   if (!response.ok) {
