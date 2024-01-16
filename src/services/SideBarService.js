@@ -1,6 +1,6 @@
 const PoliticianStock = async (authToken, PoliticianName) => {
   const response = await fetch(
-    `https://www.fluxdux.com/getPoliticianStock/${authToken}/${PoliticianName}/`,
+    `https://fluxdux.com/getPoliticianStock/${authToken}/${PoliticianName}/`,
   );
 
   if (!response.ok) {
@@ -15,7 +15,7 @@ const PoliticianStock = async (authToken, PoliticianName) => {
 
 const HedgeFundStock = async (authToken, HedgeManageName) => {
   const response = await fetch(
-    `https://www.fluxdux.com/getHedgeFundStock/${authToken}/${HedgeManageName}/`,
+    `https://fluxdux.com/getHedgeFundStock/${authToken}/${HedgeManageName}/`,
   );
 
   if (!response.ok) {
@@ -30,7 +30,7 @@ const HedgeFundStock = async (authToken, HedgeManageName) => {
 
 const PoliticanNameList = async (authToken, StockSymbol) => {
   const response = await fetch(
-    `https://www.fluxdux.com/getPoliticianName/${authToken}/${StockSymbol}/`,
+    `https://fluxdux.com/getPoliticianName/${authToken}/${StockSymbol}/`,
   );
 
   if (!response.ok) {
@@ -45,7 +45,7 @@ const PoliticanNameList = async (authToken, StockSymbol) => {
 
 const HedgeFundNameList = async (authToken, StockSymbol) => {
   const response = await fetch(
-    `https://www.fluxdux.com/getManagerName/${authToken}/${StockSymbol}/`,
+    `https://fluxdux.com/getManagerName/${authToken}/${StockSymbol}/`,
   );
 
   if (!response.ok) {
